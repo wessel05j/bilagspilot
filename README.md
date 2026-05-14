@@ -26,27 +26,33 @@ Dette er en demo, ikke et godkjent regnskapssystem.
 - AI: OpenAI Responses API med bilde/PDF-input
 - Eksport: CSV
 
+## Klon repoet
+
+```bash
+git clone https://github.com/wessel05j/bilagspilot.git
+```
+
 ## Kjør backend
 
-Windows:
+Backend kjøres i egen terminal. Kjør kommandoen fra mappen der du klonet repoet. Bash-kommandoen fungerer på Linux/macOS og i Git Bash på Windows:
+
+```bash
+cd bilagspilot/backend &&
+python3 -m venv .venv &&
+source .venv/bin/activate &&
+pip install -r requirements.txt &&
+cp -n .env.example .env &&
+uvicorn app.main:app --reload
+```
+
+Windows PowerShell:
 
 ```powershell
-cd backend
+cd bilagspilot\backend
 py -m venv .venv
 .\.venv\Scripts\activate
 pip install -r requirements.txt
 copy .env.example .env
-uvicorn app.main:app --reload
-```
-
-Linux/macOS:
-
-```bash
-cd backend
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-cp .env.example .env
 uvicorn app.main:app --reload
 ```
 
@@ -60,11 +66,11 @@ Backend kjører på `http://localhost:8000`.
 
 ## Kjør frontend
 
-Windows, Linux og macOS:
+Frontend kjøres i en annen terminal. Kjør kommandoen fra mappen der du klonet repoet:
 
 ```bash
-cd frontend
-npm install
+cd bilagspilot/frontend &&
+npm install &&
 npm run dev
 ```
 
