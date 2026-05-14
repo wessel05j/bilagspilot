@@ -100,3 +100,25 @@ def test_cannot_approve_document_with_missing_required_fields(client, monkeypatc
     assert approve_response.status_code == 400
     assert "Kan ikke godkjenne" in approve_response.json()["detail"]
 
+
+def test_delete_document_removes_it_from_history(client, monkeypatch):
+    monkeypatch.setattr(
+        "app.routers.uploads.extract_document_fields",
+        lambda *_args, **_kwargs: fake_extraction(),
+    )
+
+    upload_response = client.post(
+        "/api/uploads",
+        files={"file": ("reject-me.jpg", b"fake image bytes", "image/jpeg")},
+    )
+    document_id = upload_response.json()["id"]
+
+    delete_response = client.delete(f"/api/documents/{document_id}")
+    assert delete_response.status_code == 204
+
+    list_response = client.get("/api/documents")
+    assert list_response.status_code == 200
+    assert list_response.json() == []
+
+    get_response = client.get(f"/api/documents/{document_id}")
+    assert get_response.status_code == 404

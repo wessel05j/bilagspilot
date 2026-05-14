@@ -1,6 +1,7 @@
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Response, status
 from sqlalchemy.orm import Session
 
+from app.config import settings
 from app.database import get_db
 from app.models import Document
 from app.schemas import DocumentRead, DocumentUpdate
@@ -69,3 +70,16 @@ def approve_document(document_id: int, db: Session = Depends(get_db)) -> Documen
     db.refresh(document)
     return document
 
+
+@router.delete("/{document_id}", status_code=status.HTTP_204_NO_CONTENT)
+def delete_document(document_id: int, db: Session = Depends(get_db)) -> Response:
+    document = _get_document_or_404(document_id, db)
+    stored_filename = document.stored_filename
+    db.delete(document)
+    db.commit()
+
+    if stored_filename:
+        file_path = settings.upload_dir / stored_filename
+        file_path.unlink(missing_ok=True)
+
+    return Response(status_code=status.HTTP_204_NO_CONTENT)
