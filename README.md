@@ -94,9 +94,9 @@ Frontend kjører på `http://localhost:5173`.
 2. Åpne `http://localhost:5173`.
 3. Last opp et falskt bilag, for eksempel `demo/fake-bilag.pdf`.
 4. Kontroller feltene AI foreslår.
-5. Rett eventuelle feil.
-6. Trykk `Godkjenn`.
-7. Trykk `Eksporter CSV`.
+5. Rett eventuelle feil direkte i skjemaet.
+6. Trykk `Godkjenn`, eller `Avvis og slett` hvis bilaget ikke skal brukes.
+7. Trykk `Eksporter CSV` for godkjente bilag.
 
 ## Vanlige problemer
 

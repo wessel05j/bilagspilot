@@ -36,9 +36,11 @@ export function DocumentTable({
         <tbody>
           {documents.map((document) => (
             <tr key={document.id} className={selectedId === document.id ? "selected" : ""}>
-              <td>{document.original_filename}</td>
+              <td title={document.original_filename}>{document.original_filename}</td>
               <td>{document.invoice_date ?? "-"}</td>
-              <td>{document.supplier_name ?? "-"}</td>
+              <td title={document.supplier_name ?? undefined}>
+                {document.supplier_name ?? "-"}
+              </td>
               <td>{formatMoney(document.total_amount, document.currency)}</td>
               <td>{document.category ?? "-"}</td>
               <td>
@@ -61,4 +63,3 @@ export function DocumentTable({
     </div>
   );
 }
-

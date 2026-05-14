@@ -57,7 +57,23 @@ export async function approveDocument(
   });
 }
 
+export async function deleteDocument(documentId: number): Promise<void> {
+  const response = await fetch(`${API_BASE_URL}/api/documents/${documentId}`, {
+    method: "DELETE"
+  });
+
+  if (!response.ok) {
+    let message = "Kunne ikke slette bilaget.";
+    try {
+      const body = (await response.json()) as { detail?: string };
+      message = body.detail ?? message;
+    } catch {
+      message = response.statusText || message;
+    }
+    throw new ApiError(message);
+  }
+}
+
 export function exportCsvUrl(): string {
   return `${API_BASE_URL}/api/exports/csv`;
 }
-

@@ -1,5 +1,5 @@
 import { FormEvent, useEffect, useState } from "react";
-import { Check, Save } from "lucide-react";
+import { Check, Trash2 } from "lucide-react";
 
 import type { DocumentRecord, DocumentUpdate } from "../types/document";
 import { statusLabel } from "../utils/status";
@@ -16,10 +16,10 @@ const CATEGORIES = [
 
 type EditableDocumentFormProps = {
   document: DocumentRecord | null;
-  isSaving: boolean;
   isApproving: boolean;
-  onSave: (documentId: number, payload: DocumentUpdate) => void;
-  onApprove: (documentId: number) => void;
+  isRejecting: boolean;
+  onApprove: (documentId: number, payload: DocumentUpdate) => void;
+  onReject: (document: DocumentRecord) => void;
 };
 
 type FormState = {
@@ -48,10 +48,10 @@ function toFormState(document: DocumentRecord): FormState {
 
 export function EditableDocumentForm({
   document,
-  isSaving,
   isApproving,
-  onSave,
-  onApprove
+  isRejecting,
+  onApprove,
+  onReject
 }: EditableDocumentFormProps) {
   const [formState, setFormState] = useState<FormState | null>(null);
 
@@ -75,9 +75,8 @@ export function EditableDocumentForm({
     setFormState((current) => (current ? { ...current, [field]: value } : current));
   }
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    const payload: DocumentUpdate = {
+  function buildPayload(): DocumentUpdate {
+    return {
       supplier_name: activeFormState.supplier_name.trim() || null,
       invoice_date: activeFormState.invoice_date || null,
       total_amount: activeFormState.total_amount
@@ -89,7 +88,11 @@ export function EditableDocumentForm({
       category: activeFormState.category || null,
       review_notes: activeFormState.review_notes.trim() || null
     };
-    onSave(activeDocument.id, payload);
+  }
+
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    onApprove(activeDocument.id, buildPayload());
   }
 
   return (
@@ -180,19 +183,23 @@ export function EditableDocumentForm({
             onChange={(event) => updateField("review_notes", event.target.value)}
           />
         </label>
-        <div className="form-actions">
-          <button className="button secondary" type="submit" disabled={isSaving}>
-            <Save size={17} />
-            Lagre
+        <div className="form-actions review-actions">
+          <button
+            className="button danger"
+            type="button"
+            disabled={isRejecting}
+            onClick={() => onReject(activeDocument)}
+          >
+            <Trash2 size={17} />
+            {activeDocument.status === "approved" ? "Slett bilag" : "Avvis og slett"}
           </button>
           <button
             className="button primary"
-            type="button"
+            type="submit"
             disabled={isApproving || activeDocument.status === "approved"}
-            onClick={() => onApprove(activeDocument.id)}
           >
             <Check size={17} />
-            Godkjenn
+            {activeDocument.status === "approved" ? "Godkjent" : "Godkjenn"}
           </button>
         </div>
       </form>

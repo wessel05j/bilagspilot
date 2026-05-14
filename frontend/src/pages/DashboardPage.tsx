@@ -4,6 +4,7 @@ import { Download, RefreshCw, ShieldCheck } from "lucide-react";
 import {
   ApiError,
   approveDocument,
+  deleteDocument,
   exportCsvUrl,
   listDocuments,
   updateDocument,
@@ -21,8 +22,8 @@ export function DashboardPage() {
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isUploading, setIsUploading] = useState(false);
-  const [isSaving, setIsSaving] = useState(false);
   const [isApproving, setIsApproving] = useState(false);
+  const [isRejecting, setIsRejecting] = useState(false);
 
   async function refreshDocuments(selectId?: number) {
     setIsLoading(true);
@@ -72,27 +73,12 @@ export function DashboardPage() {
     }
   }
 
-  async function handleSave(documentId: number, payload: DocumentUpdate) {
-    setError(null);
-    setMessage(null);
-    setIsSaving(true);
-    try {
-      const updated = await updateDocument(documentId, payload);
-      setSelectedDocument(updated);
-      await refreshDocuments(updated.id);
-      setMessage("Endringene er lagret.");
-    } catch (caught) {
-      setError(caught instanceof ApiError ? caught.message : "Kunne ikke lagre.");
-    } finally {
-      setIsSaving(false);
-    }
-  }
-
-  async function handleApprove(documentId: number) {
+  async function handleApprove(documentId: number, payload: DocumentUpdate) {
     setError(null);
     setMessage(null);
     setIsApproving(true);
     try {
+      await updateDocument(documentId, payload);
       const approved = await approveDocument(documentId);
       setSelectedDocument(approved);
       await refreshDocuments(approved.id);
@@ -101,6 +87,29 @@ export function DashboardPage() {
       setError(caught instanceof ApiError ? caught.message : "Kunne ikke godkjenne.");
     } finally {
       setIsApproving(false);
+    }
+  }
+
+  async function handleReject(document: DocumentRecord) {
+    const shouldDelete = window.confirm(
+      `Avvise og slette "${document.original_filename}"? Dette kan ikke angres.`
+    );
+    if (!shouldDelete) {
+      return;
+    }
+
+    setError(null);
+    setMessage(null);
+    setIsRejecting(true);
+    try {
+      await deleteDocument(document.id);
+      setSelectedDocument(null);
+      await refreshDocuments();
+      setMessage("Bilaget er slettet.");
+    } catch (caught) {
+      setError(caught instanceof ApiError ? caught.message : "Kunne ikke slette bilaget.");
+    } finally {
+      setIsRejecting(false);
     }
   }
 
@@ -173,10 +182,10 @@ export function DashboardPage() {
 
         <EditableDocumentForm
           document={selectedDocument}
-          isSaving={isSaving}
           isApproving={isApproving}
-          onSave={handleSave}
+          isRejecting={isRejecting}
           onApprove={handleApprove}
+          onReject={handleReject}
         />
       </div>
 
