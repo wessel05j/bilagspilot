@@ -28,10 +28,12 @@ node_modules/
 dist/
 frontend/node_modules/
 frontend/dist/
+*.tsbuildinfo
+vite.config.js
+vite.config.d.ts
 
 # OS/editor
 .DS_Store
 Thumbs.db
 .idea/
 .vscode/
-
