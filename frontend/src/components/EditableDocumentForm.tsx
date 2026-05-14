@@ -2,6 +2,7 @@ import { FormEvent, useEffect, useState } from "react";
 import { Check, Save } from "lucide-react";
 
 import type { DocumentRecord, DocumentUpdate } from "../types/document";
+import { statusLabel } from "../utils/status";
 import { StatusBadge } from "./StatusBadge";
 
 const CATEGORIES = [
@@ -100,7 +101,7 @@ export function EditableDocumentForm({
         </div>
         <div className="status-stack">
           <StatusBadge value={activeDocument.confidence_status} />
-          <StatusBadge value={activeDocument.status} />
+          <StatusBadge value={statusLabel(activeDocument.status)} />
         </div>
       </div>
 
