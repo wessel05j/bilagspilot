@@ -99,7 +99,7 @@ export function EditableDocumentForm({
     <section className="review-panel">
       <div className="section-heading">
         <div>
-          <h2>Kontroller bilag</h2>
+          <h2>Kontroll</h2>
           <p>{activeDocument.original_filename}</p>
         </div>
         <div className="status-stack">

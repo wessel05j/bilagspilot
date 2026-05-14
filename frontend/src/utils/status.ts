@@ -2,9 +2,9 @@ import type { DocumentRecord } from "../types/document";
 
 export function statusLabel(status: DocumentRecord["status"]): string {
   const labels: Record<DocumentRecord["status"], string> = {
-    uploaded: "Lastet opp",
-    extracted: "Klar til kontroll",
-    needs_review: "Må sjekkes",
+    uploaded: "Ny",
+    extracted: "Klar",
+    needs_review: "Sjekk",
     approved: "Godkjent",
     failed: "Feilet"
   };
@@ -17,14 +17,14 @@ export function statusTone(status: string): string {
     status === "approved" ||
     status === "extracted" ||
     status === "Godkjent" ||
-    status === "Klar til kontroll"
+    status === "Klar"
   ) {
     return "success";
   }
   if (status === "Mangler data" || status === "failed" || status === "Feilet") {
     return "danger";
   }
-  if (status === "Må sjekkes" || status === "needs_review") {
+  if (status === "Må sjekkes" || status === "Sjekk" || status === "needs_review") {
     return "warning";
   }
   return "neutral";

@@ -4,7 +4,8 @@ import { formatMoney, statusLabel, statusTone } from "./status";
 
 describe("status helpers", () => {
   it("maps document statuses to Norwegian labels", () => {
-    expect(statusLabel("needs_review")).toBe("Må sjekkes");
+    expect(statusLabel("needs_review")).toBe("Sjekk");
+    expect(statusLabel("extracted")).toBe("Klar");
     expect(statusLabel("approved")).toBe("Godkjent");
   });
 
@@ -18,4 +19,3 @@ describe("status helpers", () => {
     expect(formatMoney(1249, "NOK")).toContain("1 249");
   });
 });
-

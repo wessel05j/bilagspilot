@@ -360,7 +360,9 @@ tr.selected td {
 .status-badge {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   min-height: 28px;
+  min-width: 44px;
   border-radius: 999px;
   padding: 0 10px;
   font-size: 0.8rem;
