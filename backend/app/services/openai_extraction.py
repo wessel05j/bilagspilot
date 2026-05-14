@@ -5,7 +5,7 @@ from typing import Literal
 from openai import OpenAI, OpenAIError
 from pydantic import BaseModel, Field
 
-from app.config import settings
+from app.config import is_openai_configured, settings
 
 
 Category = Literal[
@@ -65,10 +65,13 @@ def _build_file_content(file_path: Path, mime_type: str) -> dict[str, str]:
 
 
 def extract_document_fields(file_path: Path, mime_type: str) -> ReceiptExtraction:
-    if not settings.openai_api_key or settings.openai_api_key == "your_key_here":
-        raise ExtractionServiceError("OPENAI_API_KEY mangler i backend/.env.")
+    if not is_openai_configured():
+        raise ExtractionServiceError(
+            "OPENAI_API_KEY mangler eller er placeholder i backend/.env. "
+            "Legg inn nøkkelen og restart backend."
+        )
 
-    client = OpenAI(api_key=settings.openai_api_key)
+    client = OpenAI(api_key=(settings.openai_api_key or "").strip())
 
     try:
         response = client.responses.parse(
@@ -97,4 +100,3 @@ def extract_document_fields(file_path: Path, mime_type: str) -> ReceiptExtractio
         raise ExtractionServiceError("OpenAI returnerte ikke strukturert JSON.")
 
     return response.output_parsed
-

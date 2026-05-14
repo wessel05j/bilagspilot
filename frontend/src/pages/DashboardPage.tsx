@@ -55,7 +55,16 @@ export function DashboardPage() {
       const uploaded = await uploadDocument(file);
       setSelectedDocument(uploaded);
       await refreshDocuments(uploaded.id);
-      setMessage("Bilaget er analysert og klart for kontroll.");
+      if (uploaded.status === "failed") {
+        setError(
+          uploaded.error_message ??
+            "Automatisk analyse feilet. Se backend-terminalen for detaljer."
+        );
+      } else if (uploaded.confidence_status === "OK") {
+        setMessage("Bilaget er analysert og klart for kontroll.");
+      } else {
+        setMessage("Bilaget er analysert, men må sjekkes før godkjenning.");
+      }
     } catch (caught) {
       setError(caught instanceof ApiError ? caught.message : "Opplasting feilet.");
     } finally {
@@ -187,4 +196,3 @@ export function DashboardPage() {
     </main>
   );
 }
-

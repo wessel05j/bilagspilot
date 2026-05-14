@@ -1,3 +1,5 @@
+import logging
+
 from fastapi import APIRouter, Depends, File, HTTPException, UploadFile, status
 from sqlalchemy.orm import Session
 
@@ -12,6 +14,7 @@ from app.services.openai_extraction import (
 from app.services.validation import validate_extraction
 
 router = APIRouter(prefix="/api/uploads", tags=["uploads"])
+logger = logging.getLogger(__name__)
 
 
 @router.post(
@@ -54,8 +57,13 @@ async def upload_document(
         document.confidence_status = "Må sjekkes"
         document.review_notes = "Automatisk analyse feilet. Prøv igjen eller legg inn data manuelt."
         document.error_message = str(exc)
+        logger.warning(
+            "AI extraction failed for document_id=%s filename=%s: %s",
+            document.id,
+            document.original_filename,
+            exc,
+        )
 
     db.commit()
     db.refresh(document)
     return document
-
