@@ -8,7 +8,7 @@ Dette er en demo, ikke et godkjent regnskapssystem.
 
 ## Skjermbilde
 
-![Bilagspilot dashboard](docs/screenshots/dashboard.svg)
+![Bilagspilot dashboard](docs/screenshots/dashboard-current.svg)
 
 ## Hva appen gjør
 
