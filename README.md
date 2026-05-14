@@ -70,11 +70,21 @@ Backend kjører på `http://localhost:8000`.
 
 ## Kjør frontend
 
-Frontend kjøres i en annen terminal. Kjør kommandoen fra mappen der du klonet repoet:
+Frontend kjøres i en annen terminal. Kjør kommandoene fra mappen der du klonet repoet.
+
+Windows PowerShell:
+
+```powershell
+cd bilagspilot\frontend
+npm install
+npm run dev
+```
+
+Linux/macOS Bash:
 
 ```bash
-cd bilagspilot/frontend &&
-npm install &&
+cd bilagspilot/frontend
+npm install
 npm run dev
 ```
 
