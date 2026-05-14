@@ -8,9 +8,7 @@ Dette er en demo, ikke et godkjent regnskapssystem.
 
 ## Demo
 
-<video src="Video/userTest.mp4" controls width="100%" title="Bilagspilot demo"></video>
-
-[Åpne demo-videoen](Video/userTest.mp4)
+[![Klikk for å spille demo-videoen](docs/screenshots/video-preview.png)](https://raw.githubusercontent.com/wessel05j/bilagspilot/main/Video/userTest.mp4)
 
 ## Hva appen gjør
 
