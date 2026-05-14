@@ -34,16 +34,7 @@ git clone https://github.com/wessel05j/bilagspilot.git
 
 ## Kjør backend
 
-Backend kjøres i egen terminal. Kjør kommandoen fra mappen der du klonet repoet. Bash-kommandoen fungerer på Linux/macOS og i Git Bash på Windows:
-
-```bash
-cd bilagspilot/backend &&
-python3 -m venv .venv &&
-source .venv/bin/activate &&
-pip install -r requirements.txt &&
-cp -n .env.example .env &&
-uvicorn app.main:app --reload
-```
+Backend kjøres i egen terminal. Kjør kommandoene fra mappen der du klonet repoet.
 
 Windows PowerShell:
 
@@ -55,6 +46,19 @@ pip install -r requirements.txt
 copy .env.example .env
 uvicorn app.main:app --reload
 ```
+
+Linux/macOS Bash:
+
+```bash
+cd bilagspilot/backend
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+cp -n .env.example .env
+uvicorn app.main:app --reload
+```
+
+Ikke bruk Bash-kommandoer med `&&` i gammel Windows PowerShell. Bruk PowerShell-blokken over.
 
 Legg inn din egen API-nøkkel i `backend/.env`:
 
