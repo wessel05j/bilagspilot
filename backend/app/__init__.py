@@ -1,0 +1,2 @@
+"""Bilagspilot backend package."""
+
