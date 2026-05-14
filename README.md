@@ -130,6 +130,10 @@ VITE_API_BASE_URL=http://localhost:8000
 - CSV-eksporten er enkel og laget for demo/portefølje.
 - Det finnes ikke innlogging eller rollebasert tilgang ennå.
 
+## Lisens
+
+MIT
+
 ## Videre arbeid
 
 - Excel-eksport.
@@ -137,4 +141,3 @@ VITE_API_BASE_URL=http://localhost:8000
 - Innlogging.
 - Flere kategorier og regler per bedrift.
 - Bedre revisjonsspor for manuelle endringer.
-
