@@ -98,6 +98,17 @@ Frontend kjører på `http://localhost:5173`.
 6. Trykk `Godkjenn`.
 7. Trykk `Eksporter CSV`.
 
+## Vanlige problemer
+
+Hvis frontend sier at `OPENAI_API_KEY` mangler selv om du har lagt den inn:
+
+1. Sjekk at nøkkelen ligger i `backend/.env`, ikke bare i `.env.example`.
+2. Restart backend etter at du har endret `.env`.
+3. Åpne `http://localhost:8000/api/health` og se at `openai_configured` er `true`.
+4. Hvis backend kjører på en annen port enn `8000`, oppdater `frontend/.env` med riktig `VITE_API_BASE_URL`.
+
+Hvis PowerShell sier at `&&` ikke fungerer, bruk Windows PowerShell-kommandoene i README.
+
 ## Tester
 
 Backend:
