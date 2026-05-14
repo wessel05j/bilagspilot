@@ -1,0 +1,76 @@
+<svg width="1200" height="760" viewBox="0 0 1200 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="760" fill="#F6F7F9"/>
+  <rect width="1200" height="170" fill="#FFFFFF"/>
+  <text x="48" y="70" fill="#17202A" font-family="Segoe UI, Arial, sans-serif" font-size="36" font-weight="700">Bilagspilot</text>
+  <text x="48" y="104" fill="#677282" font-family="Segoe UI, Arial, sans-serif" font-size="17">AI-basert bilagsassistent for små håndverksbedrifter</text>
+  <rect x="906" y="45" width="112" height="42" rx="8" fill="#FFFFFF" stroke="#D6DCE4"/>
+  <text x="932" y="72" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">Oppdater</text>
+  <rect x="1032" y="45" width="120" height="42" rx="8" fill="#0B6B6B"/>
+  <text x="1056" y="72" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">Eksporter CSV</text>
+
+  <rect x="48" y="138" width="1104" height="86" rx="8" fill="#DCE2EA"/>
+  <rect x="49" y="139" width="275" height="84" fill="#FFFFFF"/>
+  <rect x="325" y="139" width="275" height="84" fill="#FFFFFF"/>
+  <rect x="601" y="139" width="275" height="84" fill="#FFFFFF"/>
+  <rect x="877" y="139" width="274" height="84" fill="#FFFFFF"/>
+  <text x="70" y="171" fill="#677282" font-family="Segoe UI, Arial, sans-serif" font-size="15">Til kontroll</text>
+  <text x="70" y="205" fill="#17202A" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="700">1</text>
+  <text x="346" y="171" fill="#677282" font-family="Segoe UI, Arial, sans-serif" font-size="15">Godkjent</text>
+  <text x="346" y="205" fill="#17202A" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="700">1</text>
+  <text x="622" y="171" fill="#677282" font-family="Segoe UI, Arial, sans-serif" font-size="15">Totalt</text>
+  <text x="622" y="205" fill="#17202A" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="700">2</text>
+  <text x="918" y="190" fill="#184E77" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="700">AI foreslår. Du kontrollerer.</text>
+
+  <rect x="48" y="252" width="668" height="110" rx="8" fill="#FFFFFF" stroke="#DCE2EA"/>
+  <rect x="72" y="283" width="48" height="48" rx="8" fill="#E5F2F1"/>
+  <text x="144" y="295" fill="#17202A" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700">Last opp bilag</text>
+  <text x="144" y="324" fill="#677282" font-family="Segoe UI, Arial, sans-serif" font-size="15">PDF, PNG eller JPG. Filen analyseres før du godkjenner noe.</text>
+  <rect x="604" y="286" width="88" height="42" rx="8" fill="#0B6B6B"/>
+  <text x="625" y="313" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">Velg fil</text>
+
+  <rect x="48" y="386" width="668" height="298" rx="8" fill="#FFFFFF" stroke="#DCE2EA"/>
+  <text x="72" y="427" fill="#17202A" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700">Historikk</text>
+  <text x="72" y="454" fill="#677282" font-family="Segoe UI, Arial, sans-serif" font-size="14">Velg et bilag for kontroll.</text>
+  <rect x="49" y="480" width="666" height="42" fill="#FAFBFC"/>
+  <text x="72" y="506" fill="#677282" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">BILAG</text>
+  <text x="290" y="506" fill="#677282" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">LEVERANDOR</text>
+  <text x="452" y="506" fill="#677282" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">BELOP</text>
+  <text x="568" y="506" fill="#677282" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">STATUS</text>
+  <line x1="49" y1="522" x2="715" y2="522" stroke="#EDF0F4"/>
+  <text x="72" y="556" fill="#17202A" font-family="Segoe UI, Arial, sans-serif" font-size="14">drivstoff-kvittering.jpg</text>
+  <text x="290" y="556" fill="#17202A" font-family="Segoe UI, Arial, sans-serif" font-size="14">Circle K</text>
+  <text x="452" y="556" fill="#17202A" font-family="Segoe UI, Arial, sans-serif" font-size="14">842,50 kr</text>
+  <rect x="568" y="535" width="94" height="28" rx="14" fill="#FFF0C2"/>
+  <text x="584" y="554" fill="#735000" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">Ma sjekkes</text>
+  <line x1="49" y1="580" x2="715" y2="580" stroke="#EDF0F4"/>
+  <text x="72" y="614" fill="#17202A" font-family="Segoe UI, Arial, sans-serif" font-size="14">fake-bilag.pdf</text>
+  <text x="290" y="614" fill="#17202A" font-family="Segoe UI, Arial, sans-serif" font-size="14">Byggmakker Gjovik</text>
+  <text x="452" y="614" fill="#17202A" font-family="Segoe UI, Arial, sans-serif" font-size="14">1 249,00 kr</text>
+  <rect x="568" y="593" width="76" height="28" rx="14" fill="#DFF4E6"/>
+  <text x="584" y="612" fill="#17633A" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">Godkjent</text>
+
+  <rect x="740" y="252" width="412" height="432" rx="8" fill="#FFFFFF" stroke="#DCE2EA"/>
+  <text x="764" y="294" fill="#17202A" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700">Kontroller bilag</text>
+  <text x="764" y="321" fill="#677282" font-family="Segoe UI, Arial, sans-serif" font-size="14">drivstoff-kvittering.jpg</text>
+  <rect x="1030" y="270" width="94" height="28" rx="14" fill="#FFF0C2"/>
+  <text x="1046" y="289" fill="#735000" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">Ma sjekkes</text>
+  <text x="764" y="366" fill="#334155" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">Leverandor</text>
+  <rect x="764" y="378" width="170" height="42" rx="8" fill="#FFFFFF" stroke="#CDD6E0"/>
+  <text x="778" y="405" fill="#17202A" font-family="Segoe UI, Arial, sans-serif" font-size="14">Circle K</text>
+  <text x="956" y="366" fill="#334155" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">Dato</text>
+  <rect x="956" y="378" width="168" height="42" rx="8" fill="#FFFFFF" stroke="#CDD6E0"/>
+  <text x="970" y="405" fill="#17202A" font-family="Segoe UI, Arial, sans-serif" font-size="14">2026-05-12</text>
+  <text x="764" y="454" fill="#334155" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">Totalbelop</text>
+  <rect x="764" y="466" width="170" height="42" rx="8" fill="#FFFFFF" stroke="#CDD6E0"/>
+  <text x="778" y="493" fill="#17202A" font-family="Segoe UI, Arial, sans-serif" font-size="14">842.50</text>
+  <text x="956" y="454" fill="#334155" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">MVA-belop</text>
+  <rect x="956" y="466" width="168" height="42" rx="8" fill="#FFFFFF" stroke="#CDD6E0"/>
+  <text x="970" y="493" fill="#17202A" font-family="Segoe UI, Arial, sans-serif" font-size="14">168.50</text>
+  <text x="764" y="542" fill="#334155" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">Kontrollnotat</text>
+  <rect x="764" y="554" width="360" height="74" rx="8" fill="#FFFFFF" stroke="#CDD6E0"/>
+  <text x="778" y="582" fill="#17202A" font-family="Segoe UI, Arial, sans-serif" font-size="14">Kontroller at MVA er riktig.</text>
+  <rect x="894" y="646" width="92" height="42" rx="8" fill="#FFFFFF" stroke="#D6DCE4"/>
+  <text x="920" y="673" fill="#243447" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">Lagre</text>
+  <rect x="1000" y="646" width="124" height="42" rx="8" fill="#0B6B6B"/>
+  <text x="1030" y="673" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">Godkjenn</text>
+</svg>
