@@ -34,8 +34,6 @@ git clone https://github.com/wessel05j/bilagspilot.git
 
 ## Kjør backend
 
-Backend kjøres i egen terminal. Kjør kommandoene fra mappen der du klonet repoet.
-
 Windows PowerShell:
 
 ```powershell
