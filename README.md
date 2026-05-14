@@ -6,9 +6,11 @@ Bilagspilot er et porteføljeprosjekt som viser hvordan AI kan spare tid i førs
 
 Dette er en demo, ikke et godkjent regnskapssystem.
 
-## Skjermbilde
+## Demo
 
-![Bilagspilot dashboard](docs/screenshots/dashboard-current.svg)
+<video src="Video/userTest.mp4" controls width="100%" title="Bilagspilot demo"></video>
+
+[Åpne demo-videoen](Video/userTest.mp4)
 
 ## Hva appen gjør
 
