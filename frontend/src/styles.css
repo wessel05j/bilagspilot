@@ -317,7 +317,7 @@ td:nth-child(6) {
 
 th:nth-child(7),
 td:nth-child(7) {
-  width: 46px;
+  width: 58px;
 }
 
 tr.selected td {
@@ -326,6 +326,12 @@ tr.selected td {
 
 .align-right {
   text-align: right;
+  overflow: visible;
+  padding-right: 12px;
+}
+
+.align-right .icon-button {
+  margin-left: auto;
 }
 
 .empty-table {

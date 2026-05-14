@@ -50,7 +50,12 @@ export function DocumentTable({
                 <button
                   className="icon-button"
                   type="button"
-                  title="Åpne for kontroll"
+                  title={
+                    selectedId === document.id ? "Lukk kontroll" : "Åpne for kontroll"
+                  }
+                  aria-label={
+                    selectedId === document.id ? "Lukk kontroll" : "Åpne for kontroll"
+                  }
                   onClick={() => onSelect(document)}
                 >
                   <Eye size={17} />

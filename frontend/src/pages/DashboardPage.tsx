@@ -48,6 +48,10 @@ export function DashboardPage() {
     void refreshDocuments();
   }, []);
 
+  function toggleSelectedDocument(document: DocumentRecord) {
+    setSelectedDocument((current) => (current?.id === document.id ? null : document));
+  }
+
   async function handleUpload(file: File) {
     setError(null);
     setMessage(null);
@@ -175,7 +179,7 @@ export function DashboardPage() {
             <DocumentTable
               documents={documents}
               selectedId={selectedDocument?.id}
-              onSelect={setSelectedDocument}
+              onSelect={toggleSelectedDocument}
             />
           </section>
         </div>
@@ -199,7 +203,7 @@ export function DashboardPage() {
         <DocumentTable
           documents={approvedDocuments}
           selectedId={selectedDocument?.id}
-          onSelect={setSelectedDocument}
+          onSelect={toggleSelectedDocument}
         />
       </section>
     </main>
